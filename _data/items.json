@@ -1,0 +1,78 @@
+[
+	{
+		"_id": "5d725a4a7b292f5f8ceff789",
+		"name": "Black croptop",
+		"description": "black crop top",
+		"type": "Top",
+		"style": ["Everyday"],
+		"color": ["Black"],
+		"wardrobe": "5d713995b721c3bb38c1f5d0"
+	},
+	{
+		"_id": "5d725c84c4ded7bcb480eaa0",
+		"name": "Black pants",
+		"description": "Black denim plants",
+		"type": "Bottom",
+		"style": ["Everyday"],
+		"color": ["Black"],
+		"wardrobe": "5d713995b721c3bb38c1f5d0"
+	},
+	{
+		"_id": "5d725cb9c4ded7bcb480eaa1",
+		"name": "Yellow stripe pants",
+		"type": "Bottom",
+		"style": ["Everyday"],
+		"color": ["Black", "Yellow"],
+		"wardrobe": "5d713a66ec8f2b88b8f830b8"
+	},
+	{
+		"_id": "5d725cd2c4ded7bcb480eaa2",
+		"name": "Red dress",
+		"description": "Red dress",
+		"type": "Full body",
+		"style": ["Everyday", "Formal"],
+		"color": ["Red"],
+		"wardrobe": "5d713a66ec8f2b88b8f830b8"
+	},
+	{
+		"_id": "5d725ce8c4ded7bcb480eaa3",
+		"name": "white button up",
+		"type": "Top",
+		"style": ["Everyday", "Formal"],
+		"color": ["White"],
+		"wardrobe": "5d725a037b292f5f8ceff787"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa4",
+		"name": "White sneakers",
+		"description": "Nike Air Force 1",
+		"type": "Shoes",
+		"style": ["Everyday"],
+		"color": ["White"],
+		"wardrobe": "5d725a037b292f5f8ceff787"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa5",
+		"name": "Block heels",
+		"type": "Shoes",
+		"style": ["Everyday", "Formal"],
+		"color": ["Black"],
+		"wardrobe": "5d725a1b7b292f5f8ceff788"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa6",
+		"name": "Black skirt",
+		"type": "Bottom",
+		"style": ["Everyday"],
+		"color": ["Black"],
+		"wardrobe": "5d725a1b7b292f5f8ceff788"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa7",
+		"name": "Black T-shirt",
+		"type": "Top",
+		"style": ["Everyday"],
+		"color": ["Black"],
+		"wardrobe": "5d725a1b7b292f5f8ceff788"
+	}
+]
