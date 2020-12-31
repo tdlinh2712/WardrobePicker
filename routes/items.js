@@ -7,6 +7,7 @@ const {
     deleteItem,
     itemPhotoUpload
 } = require('../controllers/items');
+const { protect } = require('../middleware/auth');
 
 const Item = require('../models/Item');
 //const advancedResults = require('../middleware/advancedResults');
@@ -15,12 +16,12 @@ const router = express.Router({ mergeParams: true });
 
 router.route('/')
     .get(getItems)
-    .post(createItem);
+    .post(protect, createItem);
 
 router.route('/:id')
     .get(getItem)
-    .put(updateItem)
-    .delete(deleteItem);
+    .put(protect, updateItem)
+    .delete(protect, deleteItem);
     
 router.route('/:id/photo')
     .put(itemPhotoUpload);

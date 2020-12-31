@@ -42,6 +42,11 @@ const ItemSchema = new mongoose.Schema({
         ref: 'Wardrobe',
         required: true
     },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+    },
     photo: {
         type: String,
         default: 'no-photo.jpg'

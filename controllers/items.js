@@ -55,11 +55,16 @@ exports.getItem = asyncHandler(async (req, res, next) => {
 //@access Private
 exports.createItem = asyncHandler(async (req, res, next) => {
     req.body.wardrobe = req.params.wardrobeId;
+    req.body.user = req.user.id;
 
     const wardrobe = await Wardrobe.findById(req.params.wardrobeId);
 
     if (!wardrobe) {
         return next( new ErrorResponse(`No wardrobe with the id of ${req.params.wardrobeId}`, 404) );
+    };
+
+    if (wardrobe.user.toString() !== req.user.id) {
+        return next(new ErrorResponse('User id is not authorized to create this item', 401))
     }
     
     const item = await Item.create(req.body);
@@ -75,15 +80,18 @@ exports.createItem = asyncHandler(async (req, res, next) => {
 //@access Private
 exports.updateItem = asyncHandler(async (req, res, next) => {
 
-    const item = await Item.findByIdAndUpdate(req.params.id, req.body, {
-        new: true, //so that the returned data is updated data
-        runValidators: true
-    });
+    let item = await Item.findById(req.params.id);
 
     if (!item) {
         return next( new ErrorResponse(`No item with the id of ${req.params.wardrobeId}`, 404) );
     };
-
+    if (item.user.toString() !== req.user.id) {
+        return next(new ErrorResponse('User id is not authorized to update this item', 401))
+    }
+    item = await Item.findByIdAndUpdate(req.params.id, req.body, {
+        new: true, //so that the returned data is updated data
+        runValidators: true
+    });
     res.status(200).json({
         success: true,
         data: item
@@ -100,7 +108,9 @@ exports.deleteItem = asyncHandler(async (req, res, next) => {
     if (!item) {
         return next( new ErrorResponse(`No item with the id of ${req.params.wardrobeId}`, 404) );
     };
-
+    if (item.user.toString() !== req.user.id) {
+        return next(new ErrorResponse('User id is not authorized to update this item', 401))
+    }
     await item.remove();
 
     res.status(200).json({
